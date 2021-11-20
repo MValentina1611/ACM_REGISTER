@@ -97,12 +97,13 @@ public class Programador {
 	public void eliminar(String nombre)
 	{}
 	
+	@SuppressWarnings("rawtypes")
 	public void inorden(Collection collection)
 	{}
 
 	public String toString()
 	{
-		return "Name: "+ nombre+ "\n"+ "E-Mail: "+ eMail;
+		return "Name: "+ nombre+"\nPhone: " + telefono +"\nAddress: "+direccion+"\nE-Mail: "+ eMail+"\n";
 	}
 	
 	

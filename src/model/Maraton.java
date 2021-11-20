@@ -1,5 +1,6 @@
 package model;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -100,10 +101,9 @@ public class Maraton {
 	
 	
 	
-	public Collection darListaProgramadores()
+	public Collection<Programador> darListaProgramadores()
 	{
-		Collection collection = new ArrayList();
-		return collection;
+		return null;
 	}
 	
 	public void eliminarProgramador(String nombre)
@@ -116,6 +116,18 @@ public class Maraton {
 	}
 
 	
+	
+	public ArrayList<String> inorden( ArrayList<String> acumulado, Programador agregar )
+	{
+		if( agregar != null)
+		{
+			inorden(acumulado, agregar.getIzq());
+			acumulado.add( agregar.getNombre());
+			inorden(acumulado, agregar.getDer());
+		}
+		return acumulado;
+		
+	}
 	
 	
 }
