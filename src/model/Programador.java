@@ -12,6 +12,7 @@ public class Programador {
 	private Programador der;
 	private Programador izq;
 	
+	//Builder
 	public Programador( String nombre, String telefono, String direccion, String eMail)
 	{
 		this.nombre = nombre;
@@ -38,27 +39,35 @@ public class Programador {
 		this.izq = izq;
 	}	
 	
-	public String getNombre() {
+	//---------------Métodos utilizados -------------------
+	
+	
+	public String darNombre() {
 		return nombre;
 	}
+	
+	//Sólo se compararán los nombres de los programadores
+	public int compareTo(Programador toCompare)
+	{
+		return nombre.compareTo(toCompare.darNombre());
+	}
 
-	public String getTelefono() {
+	public String toString()
+	{
+		return "Name: "+ nombre+"\nPhone: " + telefono +"\nAddress: "+direccion+"\nE-Mail: "+ eMail+"\n";
+	}
+	
+	//--------------------FIRMA DE LOS MÉTODOS RESTANTES EN EL DIAGRAMA-------------------------------------------
+	public String darTelefono() {
 		return telefono;
 	}
 
-	public String getDireccion() {
+	public String darDireccion() {
 		return direccion;
 	}
 
-	public String geteMail() {
+	public String dareMail() {
 		return eMail;
-	}
-
-	//---------------Methods-------------------
-	
-	public int compareTo(Programador toCompare)
-	{
-		return nombre.compareTo(toCompare.getNombre());
 	}
 	
 	public boolean esHoja()
@@ -68,14 +77,12 @@ public class Programador {
 	
 	public Programador darMenor()
 	{
-		Programador prog = new Programador("","","","");
-		return prog;
+		return null;
 	}
 	
 	public Programador darMayor()
 	{
-		Programador prog = new Programador("","","","");
-		return prog;
+		return null;
 	}
 	
 	public int darAltura()
@@ -99,12 +106,6 @@ public class Programador {
 	
 	@SuppressWarnings("rawtypes")
 	public void inorden(Collection collection)
-	{}
-
-	public String toString()
-	{
-		return "Name: "+ nombre+"\nPhone: " + telefono +"\nAddress: "+direccion+"\nE-Mail: "+ eMail+"\n";
-	}
-	
+	{}	
 	
 }
