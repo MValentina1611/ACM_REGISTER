@@ -9,6 +9,9 @@ public class Programador {
 	private String direccion;
 	private String eMail;
 	
+	private Programador der;
+	private Programador izq;
+	
 	public Programador( String nombre, String telefono, String direccion, String eMail)
 	{
 		this.nombre = nombre;
@@ -16,25 +19,46 @@ public class Programador {
 		this.direccion = direccion;
 		this.eMail = eMail;
 	}
+		
+	//-----------------Getters and Setters--------------------
 	
-	public int compareTo(Object toCompare)
-	{
-		return 0;
+	public Programador getDer() {
+		return der;
 	}
-	
-	public String darNombre()
-	{
-		return "";
+
+	public Programador getIzq() {
+		return izq;
 	}
-	
-	public String darTelefono()
-	{
-		return "";
+
+	public void setDer(Programador der) {
+		this.der = der;
 	}
+
+	public void setIzq(Programador izq) {
+		this.izq = izq;
+	}	
 	
-	public String darEmail()
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public String geteMail() {
+		return eMail;
+	}
+
+	//---------------Methods-------------------
+	
+	public int compareTo(Programador toCompare)
 	{
-		return "";
+		return nombre.compareTo(toCompare.getNombre());
 	}
 	
 	public boolean esHoja()
@@ -75,6 +99,11 @@ public class Programador {
 	
 	public void inorden(Collection collection)
 	{}
+
+	public String toString()
+	{
+		return "Name: "+ nombre+ "\n"+ "E-Mail: "+ eMail;
+	}
 	
 	
 }
